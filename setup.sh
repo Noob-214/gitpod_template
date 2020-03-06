@@ -33,3 +33,22 @@ sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleap
 sudo chmod a+rx /usr/local/bin/repo
 
 echo "Setting up done!"
+
+echo "Now starting repo sync"
+mkdir -p lineage
+cd lineage
+repo init -u https://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
+repo sync
+
+echo "cloning device trees"
+echo " "
+echo " "
+git clone https://github.com/adislice/android_device_xiaomi_ugglite -b lineage-17.0 device/xiaomi/ugglite --depth=1
+git clone https://github.com/adislice/android_vendor_xiaomi_ugglite -b lineage-17.0 vendor/xiaomi --depth=1
+git clone https://github.com/soekarnohatta/android_kernel_xiaomi_msm8917 kernel/xiaomi/msm8937 --depth=1
+
+echo "start building"
+echo " "
+source build/envsetup.sh
+lunch lineage_ugglite-userdebug
+mka bacon -j12
