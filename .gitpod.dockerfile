@@ -1,7 +1,8 @@
 # Define the docker container to use
 #
 
-FROM ubuntu:rolling
+#FROM ubuntu:rolling
+FROM gitpod/workspace-full:latest
 
 # Define the user to use for the upcoming commands
 # For gitpod.io there are two users in default
@@ -15,8 +16,14 @@ USER root
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get install -y wget curl git
+RUN apt-get install -y python python2 python3 bc make build-essential libncurses5-dev libncursesw5-dev wget curl
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
+
+# Define environment variables
+#
+
+ENV ARCH=arm64
+ENV SUBARCH=arm64
 
 # Give back control to root
 #
