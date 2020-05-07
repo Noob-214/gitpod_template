@@ -1,3 +1,3 @@
-# gitpod_template
+# gitpod template
 
-Template repository for basic gitpod.io workspace
+Template repository for making a basic gitpod.io workspace
