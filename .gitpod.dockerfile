@@ -1,8 +1,8 @@
 # Define the docker container to use
 #
 
-FROM ubuntu:rolling
-#FROM gitpod/workspace-full:latest
+#FROM ubuntu:rolling
+FROM gitpod/workspace-full:latest
 
 # Define the user to use for the upcoming commands
 # For gitpod.io there are two users in default
@@ -23,7 +23,7 @@ RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && r
 #
 
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN dpkg --force-all -i google-chrome-stable_current_amd64.deb 
+RUN apt-get install -f -y google-chrome-stable_current_amd64.deb 
 RUN rm google-chrome-stable_current_amd64.deb -fr
 
 # Download Chrome Webdriver
