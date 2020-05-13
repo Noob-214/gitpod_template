@@ -19,18 +19,12 @@ RUN apt-get dist-upgrade -y
 RUN apt-get install -y python3 python3-pip build-essential libncurses5-dev libncursesw5-dev wget curl git zip 
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
-# Download Chrome Webdriver
-#
-
-RUN wget https://chromedriver.storage.googleapis.com/81.0.4044.138/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip
-RUN rm chromedriver_linux64.zip -fr
 
 # Define environment variables
 #
 
-#ENV ARCH=arm64
-#ENV SUBARCH=arm64
+ENV ARCH=arm64
+ENV SUBARCH=arm64
 
 # Give back control to root
 #
