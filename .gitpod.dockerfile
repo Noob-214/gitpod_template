@@ -14,16 +14,16 @@ USER root
 # Run commands to setup environment
 #
 
-RUN apt update
-RUN apt dist-upgrade -y
-RUN apt install -y python3 python3-pip build-essential libncurses5-dev libncursesw5-dev wget curl git zip 
+RUN apt-get update
+RUN apt-get dist-upgrade -y
+RUN apt-get install -y python3 python3-pip build-essential libncurses5-dev libncursesw5-dev wget curl git zip 
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 # Download and install Google Chrome
 #
 
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt install ./google-chrome-stable_current_amd64.deb -y
+RUN apt-get install -y ./google-chrome-stable_current_amd64.deb 
 RUN rm google-chrome-stable_current_amd64.deb -fr
 
 # Download Chrome Webdriver
