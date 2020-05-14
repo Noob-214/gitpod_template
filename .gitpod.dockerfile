@@ -16,7 +16,38 @@ USER root
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get install -y apt-utils python3 python3-pip build-essential wget curl zip 
+RUN apt-get install -y apt-utils \
+python3 \
+python3-pip \
+build-essential \
+wget \
+curl \
+zip \
+fonts-liberation \
+libappindicator3-1 \
+libatk-bridge2.0-0 \
+libatk1.0-0 \
+libatspi2.0-0 \
+libcups2 \
+libdrm2 \
+libgbm1 \
+libgtk-3-0 \
+libnspr4 \
+libnss3 \
+libx11-xcb1 \
+libxcomposite1 \
+libxcursor1 \
+libxcb-dri3-0 \
+libxdamage1 \
+libxfixes3 \
+libxi6 \
+libxrandr2 \
+libxss1 \
+libxtst6 \
+xdg-utils \
+libu2f-udev \
+libvulkan1 
+
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 # Install Google Chrome
