@@ -22,17 +22,17 @@ RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && r
 # Install Google Chrome
 #
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install -f -y ./google-chrome-stable_current_amd64.deb
-rm -fr google-chrome-stable_current_amd64.deb
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt install -f -y ./google-chrome-stable_current_amd64.deb
+RUN rm -fr google-chrome-stable_current_amd64.deb
 
 # Install Google Chrome Webdriver
 #
 
-wget https://chromedriver.storage.googleapis.com/81.0.4044.138/chromedriver_linux64.zip
-unzip chromedriver_linux64.zip
-mv chromedriver /usr/bin
-rm -fr chromedriver_linux64.zip
+RUN wget https://chromedriver.storage.googleapis.com/81.0.4044.138/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip
+RUN mv chromedriver /usr/bin
+RUN rm -fr chromedriver_linux64.zip
 
 # Define environment variables
 #
