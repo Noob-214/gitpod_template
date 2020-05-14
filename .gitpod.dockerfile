@@ -16,7 +16,7 @@ USER root
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get install -y python3 python3-pip build-essential wget curl zip 
+RUN apt-get install -y apt-utils python3 python3-pip build-essential wget curl zip 
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 # Install Google Chrome
