@@ -16,9 +16,6 @@ USER root
 
 RUN apt-get update
 RUN apt-get install -y apt-utils \
-bc \
-clang \
-dtc \
 python3 \
 python3-pip \
 build-essential \
