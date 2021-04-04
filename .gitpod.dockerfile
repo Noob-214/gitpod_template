@@ -2,7 +2,7 @@
 #
 
 #FROM ubuntu:rolling
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-full:20.04
 
 # Define the user to use for the upcoming commands
 # For gitpod.io there are two users in default
@@ -15,7 +15,6 @@ USER root
 #
 
 RUN apt-get update
-RUN apt-get dist-upgrade -y
 RUN apt-get install -y apt-utils \
 python3 \
 python3-pip \
