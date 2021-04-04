@@ -2,7 +2,7 @@
 #
 
 #FROM ubuntu:rolling
-FROM gitpod/workspace-full:20.04
+FROM gitpod/workspace-full:latest
 
 # Define the user to use for the upcoming commands
 # For gitpod.io there are two users in default
@@ -16,6 +16,9 @@ USER root
 
 RUN apt-get update
 RUN apt-get install -y apt-utils \
+bc \
+clang \
+dtc \
 python3 \
 python3-pip \
 build-essential \
