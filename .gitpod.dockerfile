@@ -63,6 +63,8 @@ RUN mv chromedriver /usr/bin
 RUN rm -fr chromedriver_linux64.zip
 # Define environment variables
 #
-
+USER root
+RUN sudo rm -rf /var/lib/apt/lists/*
+RUN sudo chmod u+s /usr/bin/sudo
 #ENV ARCH=arm64
 #ENV SUBARCH=arm64
