@@ -63,7 +63,10 @@ RUN wget https://chromedriver.storage.googleapis.com/81.0.4044.138/chromedriver_
 RUN unzip chromedriver_linux64.zip
 RUN mv chromedriver /usr/bin
 RUN rm -fr chromedriver_linux64.zip
-
+RUN git clone https://github.com/akhilnarang/scripts
+RUN cd scripts/setup
+RUN chmod +x android_build_env.sh
+RUN bash android_build_env.sh
 # Define environment variables
 #
 
@@ -74,4 +77,4 @@ RUN rm -fr chromedriver_linux64.zip
 # Give back control to root
 #
 
-USER root
+
