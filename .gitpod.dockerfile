@@ -13,7 +13,7 @@ USER root
 
 # Run commands to setup environment
 #
-
+RUN setup.sh
 RUN apt-get update
 RUN apt-get install -y apt-utils \
 python3 \
@@ -63,18 +63,12 @@ RUN wget https://chromedriver.storage.googleapis.com/81.0.4044.138/chromedriver_
 RUN unzip chromedriver_linux64.zip
 RUN mv chromedriver /usr/bin
 RUN rm -fr chromedriver_linux64.zip
-RUN git clone https://github.com/akhilnarang/scripts
-RUN cd scripts/setup
-RUN chmod +x android_build_env.sh
-RUN bash android_build_env.sh
 # Define environment variables
 #
 
 #ENV ARCH=arm64
 #ENV SUBARCH=arm64
-
+USER root
 
 # Give back control to root
 #
-
-
