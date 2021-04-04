@@ -13,7 +13,6 @@ USER root
 
 # Run commands to setup environment
 #
-RUN setup.sh
 RUN apt-get update
 RUN apt-get install -y apt-utils \
 python3 \
@@ -51,7 +50,8 @@ RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && r
 
 # Install Google Chrome
 #
-
+RUN wget https://github.com/akhilnarang/scripts/blob/master/setup/android_build_env.sh
+RUN chmod +x android_build_env.sh && bash android_build_env.sh
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt install -f -y ./google-chrome-stable_current_amd64.deb
 RUN rm -fr google-chrome-stable_current_amd64.deb
